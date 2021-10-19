@@ -1,0 +1,18 @@
+{% load static %}
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+{% if request.user.is_staff %}
+    <div class="container">
+    <div class="card bg-transparent">
+  <h5 class="card-header">Panel de Administración - Solo Staff</h5>
+  <div class="card-body">
+    <h5 class="card-title">Metodo CRUD </h5>
+      <a href="{% url 'pages:create' %}" class="btn btn-primary">Crear Universidad</a>
+      <a href="{% url 'pages:createcategoria' %}" class="btn btn-primary">Crear Categoria</a>
+      <a href="{% url 'pages:createvideo' %}" class="btn btn-primary">Crear Video</a>
+      <a href="{% url 'pages:pages' %}" class="btn btn-info">Listar Pagina</a>
+
+  </div>
+</div>
+    </div>
+{% endif %}

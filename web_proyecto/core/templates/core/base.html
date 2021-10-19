@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <!-- Estilos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'core/css/main.css' %}" rel="stylesheet">
+  </head>
+    <body style="
+            background: #7F7FD5;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to top, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to top, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+">
+      <!-- Navegación -->
+      <nav class="navbar navbar-dark bg-transparent">
+        <div class="container">
+          <a class="navbar-brand text-light" href="{% url 'home' %}"><h3>Cursandola</h3></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ned" aria-controls="ned" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="ned">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  <h5>
+                <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+                      </h5>
+              </li>
+              <li class="nav-item">
+                  <h5>
+                <a class="nav-link" href="{% url 'pages:pages' %}">
+                    Curso Universidad
+                    </a>
+                      </h5>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+              <h5>
+                <a class="nav-link" href="/admin/">
+                  {% if request.user.is_staff %}Admin{% else %}Acceder{% endif %}
+              </h5>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Contenido -->
+      {% block content %}{% endblock %}
+      <!-- Javascript -->
+      <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+      <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'core/js/main.js' %}"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+
+
+
+  </body>
+</html>
